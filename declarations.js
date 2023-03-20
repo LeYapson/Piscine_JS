@@ -12,7 +12,7 @@ const obj = {
 
     bool : true,
 
-    undef : undefined
+    undef : undefined,
 }
 Object.freeze(obj)
 console.log(obj)
@@ -23,8 +23,8 @@ const nested = {
     obj : {
         str : "hello",
         num : 42,
-        bool : false
-    },
+        bool : false,
+    }
 }
 Object.freeze(nested)
 console.log(nested)
