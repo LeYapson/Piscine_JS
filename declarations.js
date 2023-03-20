@@ -1,5 +1,5 @@
-const escapestr = '\`,\\,/,\",\''
-console.log(escapestr)
+const escapeStr = "\`,\,/,\",'"
+console.log(escapeStr)
 
 const arr =[4, '2']
 console.log(arr)
