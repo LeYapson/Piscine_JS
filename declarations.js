@@ -1,4 +1,4 @@
-const escapestr = '/\'\"\`\\'
+const escapestr = '\`,\\,/,\",\''
 console.log(escapestr)
 
 const arr =[4, '2']
