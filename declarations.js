@@ -19,11 +19,12 @@ console.log(obj)
 
 const nested = {
     arr : [4, undefined, '2'],
+    
     obj : {
         str : "hello",
         num : 42,
         bool : true
-    }
+    },
 }
 Object.freeze(nested)
 console.log(nested)
