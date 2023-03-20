@@ -23,7 +23,7 @@ const nested = {
     obj : {
         str : "hello",
         num : 42,
-        bool : true
+        bool : false
     },
 }
 Object.freeze(nested)
