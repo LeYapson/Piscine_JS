@@ -1,7 +1,7 @@
 const escapeStr = "\`,\\,/,\",'"
 console.log(escapeStr)
 
-const arr =[4 + "2"]
+const arr =[4, "2"]
 Object.freeze(arr)
 console.log(arr)
 
@@ -18,7 +18,7 @@ Object.freeze(obj)
 console.log(obj)
 
 const nested = {
-    arr : [4+ undefined+ '2'],
+    arr : [4, undefined, '2'],
     
     obj : {
         str : "hello",
