@@ -1,7 +1,7 @@
 const escapeStr = "\`,\\,/,\",'"
 console.log(escapeStr)
 
-const arr =[4, '2']
+const arr =[4, "2"]
 console.log(arr)
 
 const obj = {
