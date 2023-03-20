@@ -10,6 +10,6 @@ const bool = true
 
 console.log(bool)
 
-const undef =
+let undef
 
 console.log(undef)
