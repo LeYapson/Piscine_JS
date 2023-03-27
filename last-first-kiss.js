@@ -1,7 +1,7 @@
 const first = (str) => str[0];
 console.log(first("wesh"))
 
-const last = (strR) => strR.slice(-1);
+const last = (str) => str[str.length-1]
 console.log(last("wesh"))
 
 
