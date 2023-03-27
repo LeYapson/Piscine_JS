@@ -5,5 +5,5 @@ const last = (str) => str[str.length-1]
 console.log(last("wesh"))
 
 
-const kiss = (strK) => [strK.slice(-1), strK[0]];
+const kiss = (strK) => [strK[strK.length-1], strK[0]];
 console.log(kiss("wesh"))
