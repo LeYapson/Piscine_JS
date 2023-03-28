@@ -7,3 +7,9 @@ console.log(last("wesh"))
 
 const kiss = (strK) => [strK[strK.length-1], strK[0]];
 console.log(kiss("wesh"))
+
+function first (str) {
+    return str[0]
+}
+
+
