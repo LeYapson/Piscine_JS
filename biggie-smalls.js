@@ -1,5 +1,5 @@
-const smalls = Number.MIN_VALUE
+let smalls = Number.MIN_VALUE
 console.log(smalls)
 
-const biggie = Number.MAX_VALUE+1
+let biggie = Number.MAX_VALUE+1
 console.log(biggie)
