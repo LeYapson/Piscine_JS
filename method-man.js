@@ -12,7 +12,7 @@ console.log(yell("mais billy, c'est pas homer"))
 
 const whisper = (str) => "*" + str.toLowerCase() + "*"
 
-console.log(whisper(" C'EST HOMERDE! "))
+console.log(whisper("C'EST HOMERDE!"))
 
 const capitalize = (Str) => Str.charAt(0).toUpperCase() + Str.slice(1);
 
