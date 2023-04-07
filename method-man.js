@@ -10,7 +10,7 @@ const yell =(STR) => STR.toUpperCase()
 
 console.log(yell("mais billy, c'est pas homer"))
 
-const whisper = (str) => " " + str.toLowerCase() + " "
+const whisper = (str) => "*" + str.toLowerCase() + "*"
 
 console.log(whisper(" C'EST HOMERDE! "))
 
