@@ -14,6 +14,6 @@ const whisper = (str) => "*" + str.toLowerCase() + "*"
 
 console.log(whisper("C'EST HOMERDE!"))
 
-const capitalize = (Str) => Str.charAt(0).toUpperCase() + Str.slice(1).toLowerCase;
+const capitalize = (Str) => Str.charAt(0).toUpperCase() + Str.slice(1).toLowerCase();
 
 console.log(capitalize("je suis mort de rire ahah"))
