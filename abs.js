@@ -4,6 +4,6 @@ function isPositive(nb) {
 console.log(isPositive(-12))
 
 function abs(nb) {
-    return nb < 0 ? -nb : nb;
+    return(nb < 0 ? -nb : nb);
 }
 console.log(abs(-6))
