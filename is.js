@@ -1,9 +1,9 @@
 
     is.num = function(value) {
-      return typeof value === !isNaN(value);
+      return typeof value === "number" && !isNaN(value);
     };
     is.nan = function(value) {
-      return typeof value === isNaN(value);
+      return typeof value === "number" && isNaN(value);
     };
     is.str = function(value) {
       return typeof value === "string";
