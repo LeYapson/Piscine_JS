@@ -1,4 +1,4 @@
-const is = {
+
     num: function(value) {
       return typeof value === "number" && !isNaN(value);
     },
@@ -32,5 +32,3 @@ const is = {
     falsy: function(value) {
       return !Boolean(value);
     }
-  };
-console.log(is.num(5))  
