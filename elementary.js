@@ -24,12 +24,43 @@ function myAbs(num) {
 }
 console.log(multiply(123,-22))
 
-function divide(a, b, depth = 0) {
-    if(a<b) {
-        return depth;
-    } else {
-        return(a-b, b, depth+1)
-    }
+function divide(a, b) {
+   // If the divisor is 0, return NaN
+  if (b === 0) {
+    return NaN;
+  }
+
+  let quotient = 0;
+  let isNegative = false;
+
+  // Determine the sign of the quotient
+  if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
+    isNegative = true;
+  }
+
+  // Convert inputs to positive numbers
+  a = myAbs(a);
+  b = myAbs(b);
+
+  // Perform integer division
+  while (a >= b) {
+    a -= b;
+    quotient++;
+  }
+
+  // Add negative sign if necessary
+  if (isNegative) {
+    quotient = -quotient;
+  }
+
+  return quotient;
+}
+
+function myAbs(num) {
+  if (num < 0) {
+    return -num;
+  }
+  return num;
 }
 console.log(divide(5,3))
 
