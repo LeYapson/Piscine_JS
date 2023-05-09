@@ -39,8 +39,8 @@ function divide(a, b) {
   }
 
   // Convert inputs to positive numbers
-  a = myAbs(a);
-  b = myAbs(b);
+  a = myAbs2(a);
+  b = myAbs2(b);
 
   // Perform integer division
   while (a >= b) {
@@ -56,7 +56,7 @@ function divide(a, b) {
   return quotient;
 }
 
-function myAbs(num) {
+function myAbs2(num) {
   if (num < 0) {
     return -num;
   }
@@ -64,17 +64,34 @@ function myAbs(num) {
 }
 console.log(divide(5,3))
 
-function modulo(a, b) {
-    if (b <= 0) {
-      throw new Error('Le diviseur doit être supérieur à zéro');
-    }
-    
-    let result = a;
-    
-    while (result >= b) {
-      result -= b;
-    }
-    
-    return result;
+function modulo(divisor, dividend) {
+    // If the divisor is 0, return NaN
+  if (divisor === 0) {
+    return NaN;
   }
+
+  let isNegative = false;
+
+  // Determine the sign of the remainder
+  if (dividend < 0) {
+    isNegative = true;
+    dividend = -dividend;
+  }
+  if (divisor < 0) {
+    divisor = -divisor;
+  }
+
+  // Perform modulo operation
+  let remainder = dividend;
+  while (remainder >= divisor) {
+    remainder -= divisor;
+  }
+
+  // Add negative sign if necessary
+  if (isNegative) {
+    remainder = -remainder;
+  }
+
+  return remainder;
+}
   console.log(modulo(25,8))
