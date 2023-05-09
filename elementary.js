@@ -99,4 +99,4 @@ function modulo(divisor, dividend) {
 
   return remainder;
 }
-  console.log(modulo(25,8))
+  console.log(modulo(34,78))
