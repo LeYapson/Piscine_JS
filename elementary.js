@@ -1,27 +1,26 @@
 function multiply(a, b) {
-  // handle cases where one or both inputs are zero
-  if (a === 0 || b === 0) {
-    return 0;
+  let negative = false;
+  if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
+    negative = true;
   }
 
-  // handle cases where one or both inputs are negative
-  let sign = 1;
-  if (a < 0) {
-    sign *= -1;
-    a *= -1;
-  }
-  if (b < 0) {
-    sign *= -1;
-    b *= -1;
-  }
-
-  // perform multiplication using repeated addition
   let result = 0;
-  for (let i = 0; i < b; i++) {
-    result += a;
+  for (let i = 0; i < myAbs(b); i++) {
+    result += myAbs(a);
   }
 
-  return sign * result;
+  if (negative) {
+    result = -result;
+  }
+
+  return result;
+}
+
+function myAbs(num) {
+  if (num < 0) {
+    return -num;
+  }
+  return num;
 }
 console.log(multiply(123,-22))
 
