@@ -70,6 +70,11 @@ function modulo(divisor, dividend) {
     return NaN;
   }
 
+  // If the dividend is 0, return 0
+  if (dividend === 0) {
+    return 0;
+  }
+
   let isNegative = false;
 
   // Determine the sign of the remainder
