@@ -1,63 +1,82 @@
 function multiply(a, b) {
   let result = 0;
-  let c = b
-  let flag = false
+  let flag = false;
+
   if (b < 0) {
-      b = -b
-      flag = true
+    b = -b;
+    flag = true;
   }
+
   while (b > 0) {
-      result += a
-      b--
+    result += a;
+    b--;
   }
+
   if (flag) {
-      result = -result
+    result = -result;
   }
-  return result
+
+  return result;
 }
+
 function divide(a, b) {
-  let count = false
+  let count = 0;
+  let flag = false;
+
   if (a < 0 && b < 0) {
-      a = -a
-      b = -b
+    a = -a;
+    b = -b;
   }
 
   if (a < 0) {
-      a = -a
-      flag = true
+    a = -a;
+    flag = true;
   }
+
   if (b < 0) {
-      b = -b
-      flag = true
+    b = -b;
+    flag = true;
   }
-  let result = a
-  while (result > b) {
-      result -= b
-      count++
+
+  let result = a;
+
+  while (result >= b) {
+    result -= b;
+    count++;
   }
+
   if (flag) {
-      count = -count
+    count = -count;
   }
-  return count
+
+  return count;
 }
+
 function modulo(a, b) {
-  let flag = false
+  let flag = false;
+
   if (a < 0) {
-      a = -a
-      flag = true
+    a = -a;
+    flag = true;
   }
+
   if (b < 0) {
-      b = -b
+    b = -b;
   }
-  let result = a
-  let c = b
-  let count = 1
-  while (b < result) {
-      result = result - c
-      count++
+
+  let result = a;
+  let count = 0;
+
+  while (result >= b) {
+    result = result - b;
+    count++;
   }
+
   if (flag) {
-      result = -result
+    result = -result;
   }
-  return result
+
+  return result;
 }
+
+console.log(divide(34, 78)); // Output: 0
