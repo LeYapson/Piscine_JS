@@ -1,56 +1,63 @@
 function multiply(a, b) {
   let result = 0;
-  const sign = (Math.sign(a) === Math.sign(b)) ? 1 : -1;
-  a = Math.abs(a);
-  b = Math.abs(b);
-
+  let c = b
+  let flag = false
+  if (b < 0) {
+      b = -b
+      flag = true
+  }
   while (b > 0) {
-    if (b & 1) {
-      result += a;
-    }
-    a <<= 1;
-    b >>= 1;
+      result += a
+      b--
   }
-
-  return sign * result;
+  if (flag) {
+      result = -result
+  }
+  return result
 }
-
-
 function divide(a, b) {
-  if (b === 0) {
-    throw new Error("division by zero");
+  let count = false
+  if (a < 0 && b < 0) {
+      a = -a
+      b = -b
   }
 
-  const sign = (Math.sign(a) === Math.sign(b)) ? 1 : -1;
-  a = Math.abs(a);
-  b = Math.abs(b);
-  let result = 0;
-
-  while (a >= b) {
-    let shift = 0;
-    while (a >= (b << shift)) {
-      shift += 1;
-    }
-    result += 1 << (shift - 1);
-    a -= b << (shift - 1);
+  if (a < 0) {
+      a = -a
+      flag = true
   }
-
-  return sign * result;
+  if (b < 0) {
+      b = -b
+      flag = true
+  }
+  let result = a
+  while (result > b) {
+      result -= b
+      count++
+  }
+  if (flag) {
+      count = -count
+  }
+  return count
 }
-
-
 function modulo(a, b) {
-  if (b === 0) {
-    throw new Error("division by zero");
+  let flag = false
+  if (a < 0) {
+      a = -a
+      flag = true
   }
-
-  const sign = (Math.sign(a) === -1) ? -1 : 1;
-  a = Math.abs(a);
-  b = Math.abs(b);
-
-  while (a >= b) {
-    a -= b;
+  if (b < 0) {
+      b = -b
   }
-
-  return sign * a;
+  let result = a
+  let c = b
+  let count = 1
+  while (b < result) {
+      result = result - c
+      count++
+  }
+  if (flag) {
+      result = -result
+  }
+  return result
 }
