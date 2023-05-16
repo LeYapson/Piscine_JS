@@ -7,14 +7,13 @@ function indexOf(arr, value, startIndex = 0) {
     return -1;
   }
   
-  function lastIndexOf(arr, value) {
-    let lastIndex = -1;
-    for (let i = 0; i < arr.length; i++) {
+  function lastIndexOf(arr, value, startIndex = arr.length - 1) {
+    for (let i = startIndex; i >= 0; i--) {
       if (arr[i] === value) {
-        lastIndex = i;
+        return i;
       }
     }
-    return lastIndex;
+    return -1;
   }
   
   function includes(arr, value) {
