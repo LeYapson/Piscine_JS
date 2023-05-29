@@ -1,72 +1,19 @@
 function round(n) {
-    let ost;
-    let res;
-    let flag = false;
-    
-    if (n < 0) {
-      n = -n;
-      flag = true;
-    }
-  
-    ost = n - (n | 0);
-    if (ost > 0.5) {
-      res = n + 1 - ost;
-    } else {
-      res = n - ost;
-    }
-  
-    if (flag) {
-      res = -res;
-    }
-  
-    return res;
+    let integerPart = n < 0 ? ceil(n - 0.5) : floor(n + 0.5);
+    return integerPart;
   }
   
   function ceil(n) {
-    let ost;
-    let res;
-    ost = n - (n | 0);
-    
-    if (n > 0 && ost !== 0) {
-      res = n + 1 - ost;
-    } else {
-      res = n - ost;
-    }
-  
-    return res;
+    let integerPart = n | 0;
+    return integerPart === n ? n : (n >= 0 ? integerPart + 1 : integerPart);
   }
   
   function floor(n) {
-    let ost;
-    let res;
-    ost = n - (n | 0);
-  
-    if (n > 0 && ost !== 0) {
-      res = n - ost;
-    } else if (ost === 0) {
-      return n;
-    } else {
-      let x;
-      x = 1 + ost;
-      res = n - x;
-    }
-  
-    return res;
+    let integerPart = n | 0;
+    return integerPart <= n ? integerPart : (n >= 0 ? integerPart : integerPart - 1);
   }
   
   function trunc(n) {
-    let ost;
-    let res;
-    ost = n - (n | 0);
-  
-    if (n > 0 && ost !== 0) {
-      res = n - ost;
-    } else {
-      let x;
-      x = 1 + ost;
-      res = n - ost;
-    }
-  
-    return res;
+    return n >= 0 ? n | 0 : -((n | 0) === n ? n : (n | 0) + 1);
   }
   
