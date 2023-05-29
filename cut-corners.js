@@ -1,3 +1,31 @@
+// Create some functions which behave like JavaScript's Math rounding functions:
+
+// round: which behaves similar to Math.round().
+// ceil: which behaves similar to Math.ceil().
+// floor: which behaves similar to Math.floor().
+// trunc: which behaves similar to Math.trunc().
+function modulo(a, b) {
+    let flag = false
+    if (a < 0) {
+        a = -a
+        flag = true
+    }
+    if (b < 0) {
+        b = -b
+    }
+    let result = a
+    let c = b
+    let count = 1
+    while (b < result) {
+        result = result - c
+        count++
+    }
+    if (flag) {
+        result = -result
+    }
+    return result
+}
+
 function round(n) {
     let ost
     let res
@@ -17,6 +45,7 @@ function round(n) {
     }
     return res
 }
+
 function ceil(n) {
     let ost
     let res
@@ -26,61 +55,46 @@ function ceil(n) {
     } else {
         return res = n - ost
     }
-    return n
 }
+
 function floor(n) {
     let ost
     let res
     ost = modulo(n,1)
     if (n > 0 && ost != 0) {
+   
+
         return res = n - ost
     } else if (ost === 0) {
-        // console.log(n)
         return n
     } else {
         let x
         x = 1 + ost
         return res = n - x
     }
-    return n
-}
-function trunc(n) {
-    let ost
-    let res
-    ost = modulo(n,1)
-    if (n > 0 && ost != 0) {
-        return res = n - ost
-    } else {
-        let x
-        x = 1 + ost
-        return res = n - ost
-    }
-    return n
-}
 
-function modulo(a, b) {
-    let flag = false;
-  
-    if (a < 0) {
-      a = -a;
-      flag = true;
+}
+function trunc(num){
+    let res = num
+    let i = 0
+    let neg = false
+    if (res < 0){
+        neg = true
     }
-  
-    if (b < 0) {
-      b = -b;
+    if (neg) {
+        while (res <= i - 10000){
+            i -= 10000
+        }
+        while (res < i-1){
+            i--
+        }
+        return i
     }
-  
-    let result = a;
-    let count = 0;
-  
-    while (result >= b) {
-      result = result - b;
-      count++;
+    while (res > i + 10000){
+        i += 10000
     }
-  
-    if (flag) {
-      result = -result;
+    while (res > i+1){
+        i++
     }
-  
-    return result;
-  }
+    return i
+}
