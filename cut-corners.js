@@ -1,19 +1,86 @@
 function round(n) {
-    let integerPart = n < 0 ? ceil(n - 0.5) : floor(n + 0.5);
-    return integerPart;
-  }
+    let ost
+    let res
+    let flag = false
+    if (n < 0) {
+        n = -n
+        flag = true
+    }
+    ost = modulo(n,1)
+    if (ost > 0.5) {
+        res = n + 1 - ost
+    } else {
+        res = n - ost
+    }
+    if (flag) {
+        res = -res
+    }
+    return res
+}
+function ceil(n) {
+    let ost
+    let res
+    ost = modulo(n,1)
+    if (n > 0 && ost != 0) {
+        return res = n + 1 - ost
+    } else {
+        return res = n - ost
+    }
+    return n
+}
+function floor(n) {
+    let ost
+    let res
+    ost = modulo(n,1)
+    if (n > 0 && ost != 0) {
+        return res = n - ost
+    } else if (ost === 0) {
+        // console.log(n)
+        return n
+    } else {
+        let x
+        x = 1 + ost
+        return res = n - x
+    }
+    return n
+}
+function trunc(n) {
+    let ost
+    let res
+    ost = modulo(n,1)
+    if (n > 0 && ost != 0) {
+        return res = n - ost
+    } else {
+        let x
+        x = 1 + ost
+        return res = n - ost
+    }
+    return n
+}
+
+function modulo(a, b) {
+    let flag = false;
   
-  function ceil(n) {
-    let integerPart = n | 0;
-    return integerPart === n ? n : (n >= 0 ? integerPart + 1 : integerPart);
-  }
+    if (a < 0) {
+      a = -a;
+      flag = true;
+    }
   
-  function floor(n) {
-    let integerPart = n | 0;
-    return integerPart <= n ? integerPart : (n >= 0 ? integerPart : integerPart - 1);
-  }
+    if (b < 0) {
+      b = -b;
+    }
   
-  function trunc(n) {
-    return n >= 0 ? n | 0 : -((n | 0) === n ? n : (n | 0) + 1);
-  }
+    let result = a;
+    let count = 0;
   
+    while (result >= b) {
+      result = result - b;
+      count++;
+    }
+  
+    if (flag) {
+      result = -result;
+    }
+  
+    return result;
+  }
