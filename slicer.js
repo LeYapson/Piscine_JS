@@ -1,22 +1,21 @@
-function slice(data, start, end) {
-    if (typeof data === 'string') {
-      if (start < 0) {
-        start = data.length + start;
-      }
-      if (end < 0) {
-        end = data.length + end;
-      }
-      return data.substring(start, end);
-    } else if (Array.isArray(data)) {
-      if (start < 0) {
-        start = data.length + start;
-      }
-      if (end < 0) {
-        end = data.length + end;
-      }
-      return data.slice(start, end);
-    } else {
-      throw new Error('Unsupported data type. Expected string or array.');
-    }
+function slice(input, startIndex, endIndex) {
+  // Convert the input to an array if it is a string
+  if (typeof input === 'string') {
+    input = input.split('');
   }
-  
+
+  // Calculate the default ending index
+  if (endIndex === undefined) {
+    endIndex = input.length;
+  }
+
+  // Create a new array or string with the sliced elements
+  var result = input.slice(startIndex, endIndex);
+
+  // Convert the result back to a string if the input was a string
+  if (typeof input === 'string') {
+    result = result.join('');
+  }
+
+  return result;
+}
