@@ -8,7 +8,7 @@ function round(n) {
       flag = true;
     }
   
-    ost = n - parseInt(n);
+    ost = n - (n | 0);
     if (ost > 0.5) {
       res = n + 1 - ost;
     } else {
@@ -25,7 +25,7 @@ function round(n) {
   function ceil(n) {
     let ost;
     let res;
-    ost = n - parseInt(n);
+    ost = n - (n | 0);
     
     if (n > 0 && ost !== 0) {
       res = n + 1 - ost;
@@ -39,7 +39,7 @@ function round(n) {
   function floor(n) {
     let ost;
     let res;
-    ost = n - parseInt(n);
+    ost = n - (n | 0);
   
     if (n > 0 && ost !== 0) {
       res = n - ost;
@@ -57,7 +57,7 @@ function round(n) {
   function trunc(n) {
     let ost;
     let res;
-    ost = n - parseInt(n);
+    ost = n - (n | 0);
   
     if (n > 0 && ost !== 0) {
       res = n - ost;
