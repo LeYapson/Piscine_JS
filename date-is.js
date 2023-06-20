@@ -1,34 +1,22 @@
 const isValid = (date) => (date instanceof Date && !isNaN(date)) || ((typeof date === 'number') && !isNaN(date))
 
-function isAfter(date1, date2) {
-    if (date1.getTime() > date2.getTime()) {
-        return true
+const isAfter = (date1, date2) => {
+    if (date1 instanceof Date && date2 instanceof Date) {
+        return (date1.getTime() > date2.getTime())
     } else {
-        return false
+        return date1 > date2
     }
+
 }
 
-function isBefore(date1, date2) {
-    if (date1.getTime() < date2.getTime()) {
-        return true
+const isBefore = (date1, date2) => {
+    if (date1 instanceof Date && date2 instanceof Date) {
+        return (date1.getTime() < date2.getTime())
     } else {
-        return false
+        return date1 < date2
     }
-}
-function isFuture(date) {
-    const now = new Date()
-    if (date.getTime() > now.getTime()) {
-        return true
-    } else {
-        return false
-    }
-}
+} 
 
-function isPast(date) {
-    const now = new Date()
-    if (date.getTime() < now.getTime()) {
-        return true
-    } else {
-        return false
-    }
-}
+const isFuture = (date) => isValid(date) && isAfter(date, Date.now())
+
+const isPast = (date) => isValid(date) && isBefore(date, Date.now())
