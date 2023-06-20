@@ -1,5 +1,5 @@
 function isValid(date) {
-    if (date instanceof Date) {
+    if (date instanceof Date || date =='') {
         return true
     } else {
         return false
