@@ -1,10 +1,5 @@
-function isValid(date) {
-    if (date instanceof Date || date =='invalid date') {
-        return true
-    } else {
-        return false
-    }
-}
+const isValid = (date) => (date instanceof Date && !isNaN(date)) || ((typeof date === 'number') && !isNaN(date))
+
 function isAfter(date1, date2) {
     if (date1.getTime() > date2.getTime()) {
         return true
