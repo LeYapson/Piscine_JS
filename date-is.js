@@ -1,8 +1,8 @@
 function isValid(date) {
-    if (date == 'Invalid Date') {
-        return false
-    } else {
+    if (date instanceof Date) {
         return true
+    } else {
+        return false
     }
 }
 function isAfter(date1, date2) {
