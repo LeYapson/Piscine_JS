@@ -12,3 +12,13 @@ function dayOfTheYear(date) {
     count += day
     return count
 }
+console.log(dayOfTheYear(new Date('0001-01-01')))
+
+function countLeapYears(date) {
+    let count = 0
+    for (let i = 1; i < date.getFullYear(); i++) {
+        if (i % 4 === 0 && i % 100 !== 0) count++
+        else if (i % 400 === 0) count++
+    }
+    return count
+}
