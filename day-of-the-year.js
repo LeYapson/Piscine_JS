@@ -4,12 +4,12 @@ function dayOfTheYear(date) {
     var start = new Date(date.getFullYear(), 0, 0);
     var diff = date - start;
     var oneDay = 1000 * 60 * 60 * 24;
-    var dayOfYear = Math.floor(diff / oneDay);
+    var dayOfYear = Math.ceil(diff / oneDay);
   
     return dayOfYear;
   }
   
-  // Exemple d'utilisation
-  var currentDate = new Date();
-  console.log(dayOfTheYear(currentDate));
+  // Test
+  var testDate = new Date('0001-01-01');
+  console.log(dayOfTheYear(testDate) === 1);
   
